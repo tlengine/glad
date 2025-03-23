@@ -1,9 +1,9 @@
-project "glad"
-	language "c"
-	kind "staticlib"
+project "Glad"
+	language "C"
+	kind "StaticLib"
 	
-	targetdir "%{outdir.bin}/%{prj.name}"
-	objdir    "%{outdir.obj}/%{prj.name}"
+	targetdir "%{OutputDir.Binaries}/%{prj.name}"
+	objdir    "%{OutputDir.Intermediates}/%{prj.name}"
 	
 	files
 	{
@@ -23,15 +23,15 @@ project "glad"
 			"_CRT_SECURE_NO_WARNINGS"
 		}
 	
-	filter "configurations:devel"
-		runtime "debug"
-		symbols "on"
+	filter "configurations:Development"
+		runtime "Debug"
+		symbols "On"
 	
-	filter "configurations:prev"
-		runtime "release"
-		optimize "speed"
+	filter "configurations:Preview"
+		runtime "Release"
+		optimize "Speed"
 	
-	filter "configurations:ship"
-		runtime "release"
-		optimize "speed"
+	filter "configurations:Shipping"
+		runtime "Release"
+		optimize "Speed"
 	
